@@ -1,0 +1,19 @@
+'''
+Created on 08/4/2021
+'''
+
+# -*- coding: UTF-8 -*-
+"""
+Python-Flask webapp
+"""
+from flask import Flask  # From module flask import class Flask
+app = Flask(__name__)    # Construct an instance of Flask class for our webapp
+
+@app.route('/')   # URL '/' 
+def main():
+    """Say hello"""
+    return 'Hello, world!'
+
+if __name__ == '__main__':  
+    print("Hello World! Built with a Docker file.")
+    app.run(host="0.0.0.0", port=5000, debug=True,use_reloader=True)  # Launch built-in web server and run this Flask webapp
